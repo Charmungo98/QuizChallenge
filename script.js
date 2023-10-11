@@ -29,4 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         startCountdown(timers[index], 30);
     }
+    restartButton.addEventListener('click', function () {
+        currentQuestion = 0;
+        showQuestion(currentQuestion);
+    });
+});
+
 
