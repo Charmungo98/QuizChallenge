@@ -1,12 +1,16 @@
+let interval;
+
 document.addEventListener("DOMContentLoaded", function () {
     const questions = document.querySelectorAll('.question');
     const timers = document.querySelectorAll('.timer');
     const restartButton = document.getElementById('restart');
     const nextQuestionButton = document.getElementById('next-question');
+    const scoreDisplay = document.getElementById('score-value');
 
     let currentQuestion = 0;
     let countdown = 30;
     let interval;
+    let score = 0;
 
     function startCountdown() {
         interval = setInterval(function () {
@@ -26,16 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showQuestion(index) {
         questions.forEach((question, i) => {
-            question.style.display = 'none'; // Hide all questions
-            timers[i].style.display = 'none'; // Hide all timers
+            question.style.display = 'none';
+            timers[i].style.display = 'none';
         });
 
         if (index < questions.length) {
-            questions[index].style.display = 'block'; // Show the current question
-            timers[index].style.display = 'block'; // Show the current timer
-            nextQuestionButton.style.display = 'none'; // Hide the "Next Question" button
-            countdown = 30; // Reset the countdown timer to 30 seconds
-            clearInterval(interval); // Clear the previous interval
+            questions[index].style.display = 'block';
+            timers[index].style.display = 'block';
+            nextQuestionButton.style.display = 'none';
+            countdown = 30;
+            clearInterval(interval);
             startCountdown();
         }
     }
@@ -44,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(interval);
         countdown = 30;
         currentQuestion = 0;
+        score = 0;
+        scoreDisplay.textContent = score;
         showQuestion(currentQuestion);
     });
 
@@ -51,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const radioButtons = question.querySelectorAll('input[type="radio"]');
         radioButtons.forEach((radio) => {
             radio.addEventListener('change', function () {
-                nextQuestionButton.style.display = 'block'; // Show the "Next Question" button
+                nextQuestionButton.style.display = 'block';
                 clearInterval(interval);
             });
         });
@@ -63,13 +69,32 @@ document.addEventListener("DOMContentLoaded", function () {
             showQuestion(currentQuestion);
         }
     });
-    
+
     function updateScore(correct) {
         if (correct) {
-            score++;
+            score++; // Increment the score if the answer is correct
+            scoreDisplay.textContent = score; // Update the displayed score
         }
-        scoreElement.textContent = score;
     }
 
     showQuestion(currentQuestion);
+
+const answerButtons = document.querySelectorAll('input[type="radio"]');
+
+answerButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+        if (currentQuestion === 0) {
+            if (button.value === 'new-delhi') {
+                updateScore(true);
+            }
+        } else if (currentQuestion === 1) {
+            if (button.value === 'blue-whale') {
+                updateScore(true);
+            }
+        }
+
+        nextQuestionButton.style.display = 'block';
+        clearInterval(interval);
+    });
+});
 });
