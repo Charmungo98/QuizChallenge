@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timers[currentQuestion].textContent = 30;
     showQuestion(currentQuestion);
-    // Function to start the countdown for a timer
     function startCountdown(timerElement, seconds) {
         let countdown = seconds;
         const interval = setInterval(function () {
@@ -20,9 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (currentQuestion < questions.length) {
                     showQuestion(currentQuestion);
                 } else {
-                    // Handle the end of the quiz, e.g., show a completion message.
                 }
             }
         }, 1000);
+    }
+    function showQuestion(index) {
+        questions.forEach((question, i) => {
+            question.style.display = i === index ? 'block' : 'none';
+        });
+        startCountdown(timers[index], 30);
     }
 
