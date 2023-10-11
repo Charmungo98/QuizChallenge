@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Pub Quiz Challenge</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="banner">
-      <h1>Pub Quiz Challenge</h1>
+        <h1>Pub Quiz Challenge</h1>
     </div>
 
     <div id="questions-box">
-      <div class="question">
-        <h2>Question 1:</h2>
-        <p>What is the capital of India?</p>
-        <input type="radio" name="q1" value="mumbai" /> Mumbai<br />
-        <input type="radio" name="q1" value="london" /> London<br />
-        <input type="radio" name="q1" value="new-dheli" /> New Dheli<br />
-      </div>
-      <div id="timer1" class="timer">
-        <span id="countdown1">30</span> seconds remaining
-      </div>
+        <div class="question">
+            <h2>Question 1:</h2>
+            <p>What is the capital of India?</p>
+            <input type="radio" name="q1" value="mumbai" /> Mumbai<br />
+            <input type="radio" name="q1" value="london" /> London<br />
+            <input type="radio" name="q1" value="new-delhi" /> New Delhi<br />
+            <div class="timer">
+                <span>30</span> seconds remaining
+            </div>
+        </div>
+        
 
-      <div class="question">
-        <h2>Question 2:</h2>
-        <p>Which animal has the heaviest tongue?</p>
-        <input type="radio" name="q2" value="rex" /> Tyrannosaurus Rex<br />
-        <input type="radio" name="q2" value="elephant" /> African Elephant<br />
-        <input type="radio" name="q2" value="blue-whale" /> Blue Whale<br />
-      </div>
-      <div id="timer2" class="timer">
-        <span id="countdown2">30</span> seconds remaining
-      </div>
+        <div class="question">
+            <h2>Question 2:</h2>
+            <p>Which animal has the heaviest tongue?</p>
+            <input type="radio" name="q2" value="rex" /> Tyrannosaurus Rex<br />
+            <input type="radio" name="q2" value="elephant" /> African Elephant<br />
+            <input type="radio" name="q2" value="blue-whale" /> Blue Whale<br />
+            <div class="timer">
+                <span>30</span> seconds remaining
+            </div>
+        </div>
+        
 
-    <button id="restart">Restart Quiz</button>
+        <!-- Add more questions here -->
+
+        <button id="restart">Restart Quiz</button>
     </div>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>

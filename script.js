@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timers[currentQuestion].textContent = 30;
     showQuestion(currentQuestion);
+    
     function startCountdown(timerElement, seconds) {
         let countdown = seconds;
         const interval = setInterval(function () {
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         startCountdown(timers[index], 30);
     }
+    
     restartButton.addEventListener('click', function () {
         currentQuestion = 0;
         showQuestion(currentQuestion);
