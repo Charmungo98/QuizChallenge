@@ -1,40 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const questions = document.querySelectorAll('.question');
-    const timers = document.querySelectorAll('.timer span');
-    const restartButton = document.getElementById('restart');
+    const questions = document.querySelectorAll('.question-active'); 
+    const timers = document.querySelectorAll('.timer-active'); 
 
     let currentQuestion = 0;
+    let countdown = 30;
+    let interval;
 
-    timers[currentQuestion].textContent = 30;
-    showQuestion(currentQuestion);
-    
-    function startCountdown(timerElement, seconds) {
-        let countdown = seconds;
-        const interval = setInterval(function () {
+    function startCountdown() {
+        interval = setInterval(function () {
             countdown--;
-            timerElement.textContent = countdown;
+            timers[currentQuestion].querySelector('span').textContent = countdown;
 
             if (countdown <= 0) {
                 clearInterval(interval);
                 currentQuestion++;
+                countdown = 30;
                 if (currentQuestion < questions.length) {
                     showQuestion(currentQuestion);
                 } else {
+                   
                 }
             }
         }, 1000);
     }
+
     function showQuestion(index) {
         questions.forEach((question, i) => {
-            question.style.display = i === index ? 'block' : 'none';
+            question.classList.remove('active');
+            timers[i].classList.remove('active');
         });
-        startCountdown(timers[index], 30);
+
+        questions[index].classList.add('active');
+        timers[index].classList.add('active');
+        startCountdown();
     }
-    
+
     restartButton.addEventListener('click', function () {
+        clearInterval(interval);
+        countdown = 30;
         currentQuestion = 0;
         showQuestion(currentQuestion);
     });
+
+    showQuestion(currentQuestion);
 });
-
-
