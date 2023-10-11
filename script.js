@@ -7,4 +7,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timers[currentQuestion].textContent = 30;
     showQuestion(currentQuestion);
+    // Function to start the countdown for a timer
+    function startCountdown(timerElement, seconds) {
+        let countdown = seconds;
+        const interval = setInterval(function () {
+            countdown--;
+            timerElement.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(interval);
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion(currentQuestion);
+                } else {
+                    // Handle the end of the quiz, e.g., show a completion message.
+                }
+            }
+        }, 1000);
+    }
 
