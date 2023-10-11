@@ -63,6 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
             showQuestion(currentQuestion);
         }
     });
+    
+    function updateScore(correct) {
+        if (correct) {
+            score++;
+        }
+        scoreElement.textContent = score;
+    }
 
     showQuestion(currentQuestion);
 });
