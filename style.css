@@ -34,17 +34,6 @@ h2 {
     display: none;
 }
 
-.question-active {
-    display: block;
-}
-
-.timer-active {
-    display: block;
-    font-size: 24px;
-    color: #0073e6;
-    margin-top: 10px;
-}
-
 button#restart {
     background-color: #0073e6;
     color: #fff;

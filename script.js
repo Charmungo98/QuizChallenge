@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const questions = document.querySelectorAll('.question-active'); 
-    const timers = document.querySelectorAll('.timer-active'); 
+    const questions = document.querySelectorAll('.question');
+    const timers = document.querySelectorAll('.timer');
     const restartButton = document.getElementById('restart');
     const nextQuestionButton = document.getElementById('next-question');
 
@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 countdown = 30;
                 if (currentQuestion < questions.length) {
                     showQuestion(currentQuestion);
-                } else {
-                   
                 }
             }
         }, 1000);
@@ -28,13 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showQuestion(index) {
         questions.forEach((question, i) => {
-            question.classList.remove('active');
-            timers[i].classList.remove('active');
+            question.style.display = 'none'; // Hide all questions
+            timers[i].style.display = 'none'; // Hide all timers
         });
 
-        questions[index].classList.add('active');
-        timers[index].classList.add('active');
-        startCountdown();
+        if (index < questions.length) {
+            questions[index].style.display = 'block'; // Show the current question
+            timers[index].style.display = 'block'; // Show the current timer
+            nextQuestionButton.style.display = 'none'; // Hide the "Next Question" button
+            countdown = 30; // Reset the countdown timer to 30 seconds
+            clearInterval(interval); // Clear the previous interval
+            startCountdown();
+        }
     }
 
     restartButton.addEventListener('click', function () {
@@ -44,13 +47,20 @@ document.addEventListener("DOMContentLoaded", function () {
         showQuestion(currentQuestion);
     });
 
+    questions.forEach((question, i) => {
+        const radioButtons = question.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach((radio) => {
+            radio.addEventListener('change', function () {
+                nextQuestionButton.style.display = 'block'; // Show the "Next Question" button
+                clearInterval(interval);
+            });
+        });
+    });
+
     nextQuestionButton.addEventListener('click', function () {
         if (currentQuestion < questions.length - 1) {
-            clearInterval(interval);
-            countdown = 30;
             currentQuestion++;
             showQuestion(currentQuestion);
-        } else {
         }
     });
 

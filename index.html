@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
     <title>Pub Quiz Challenge</title>
 </head>
 
@@ -13,20 +14,17 @@
     <div id="banner">
         <h1>Pub Quiz Challenge</h1>
     </div>
-
     <div id="questions-box">
-        <div class="question-active">
+        <div class="question">
             <h2>Question 1:</h2>
             <p>What is the capital of India?</p>
             <input type="radio" name="q1" value="mumbai" /> Mumbai<br />
             <input type="radio" name="q1" value="london" /> London<br />
             <input type="radio" name="q1" value="new-delhi" /> New Delhi<br />
-            <div class="timer-active">
+            <div class="timer">
                 <span>30</span> seconds remaining
             </div>
         </div>
-        
-
         <div class="question">
             <h2>Question 2:</h2>
             <p>Which animal has the heaviest tongue?</p>
@@ -37,14 +35,10 @@
                 <span>30</span> seconds remaining
             </div>
         </div>
-        
-
         <!-- Add more questions here -->
-
         <button id="restart">Restart Quiz</button>
         <button id="next-question">Next Question</button>
     </div>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
