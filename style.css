@@ -9,14 +9,14 @@ body {
 #banner {
     background-color: #0073e6;
     color: #fff;
-    padding: 20px;
+    padding: 50px;
 }
 
 #questions-box {
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px;
+    padding: 30px;
+    margin: 25px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -26,19 +26,26 @@ h2 {
     margin-top: 0;
 }
 
+#border {
+    border: 2px solid black;
+}
+
 .question {
-    display: none;
+    padding: 50px;
 }
 
 .timer {
-    display: none;
+    display: block;
+    border: 2px solid black;
+    margin: 15px;
+    padding: 15px 10px;
 }
 
 .buttons-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    max-width: 400px;
+    margin-top: 40px;
+    max-width: 430px;
     margin: 0 auto;
 }
 
@@ -50,7 +57,7 @@ h2 {
     background-color: #0073e6;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;

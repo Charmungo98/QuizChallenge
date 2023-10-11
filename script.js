@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index < questions.length) {
             questions[index].style.display = 'block';
             timers[index].style.display = 'block';
-            nextQuestionButton.style.display = 'none';
+            nextQuestionButton.style.display = 'block';
             countdown = 30;
             clearInterval(interval);
             startCountdown();
