@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const questions = document.querySelectorAll('.question-active'); 
     const timers = document.querySelectorAll('.timer-active'); 
+    const restartButton = document.getElementById('restart');
+    const nextQuestionButton = document.getElementById('next-question');
 
     let currentQuestion = 0;
     let countdown = 30;
@@ -40,6 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
         countdown = 30;
         currentQuestion = 0;
         showQuestion(currentQuestion);
+    });
+
+    nextQuestionButton.addEventListener('click', function () {
+        if (currentQuestion < questions.length - 1) {
+            clearInterval(interval);
+            countdown = 30;
+            currentQuestion++;
+            showQuestion(currentQuestion);
+        } else {
+        }
     });
 
     showQuestion(currentQuestion);
