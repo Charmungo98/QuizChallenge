@@ -58,3 +58,17 @@ button#restart {
 button#restart:hover {
     background-color: #0054a4;
 }
+
+#next-question {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#next-question:hover {
+    background-color: #0054a4;
+}
