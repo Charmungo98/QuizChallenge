@@ -1,5 +1,3 @@
-let interval;
-
 document.addEventListener("DOMContentLoaded", function () {
     const questions = document.querySelectorAll('.question');
     const timers = document.querySelectorAll('.timer');
@@ -11,21 +9,45 @@ document.addEventListener("DOMContentLoaded", function () {
     let countdown = 30;
     let interval;
     let score = 0;
+    let selectedAnswer = null;
 
-    function startCountdown() {
-        interval = setInterval(function () {
-            countdown--;
-            timers[currentQuestion].querySelector('span').textContent = countdown;
+    function updateAnswerStatus(isCorrect) {
+        const currentQuestionElement = questions[currentQuestion];
+        const answerButtons = currentQuestionElement.querySelectorAll('input[type="radio"]');
 
-            if (countdown <= 0) {
-                clearInterval(interval);
-                currentQuestion++;
-                countdown = 30;
-                if (currentQuestion < questions.length) {
-                    showQuestion(currentQuestion);
+        answerButtons.forEach((button) => {
+            const label = button.nextElementSibling;
+
+            if (button.checked) {
+                if (isCorrect) {
+                    label.classList.add('correct');
+                } else {
+                    label.classList.add('incorrect');
                 }
             }
-        }, 1000);
+        });
+    }
+
+    function clearAnswerStatus() {
+        const currentQuestionElement = questions[currentQuestion];
+        const answerLabels = currentQuestionElement.querySelectorAll('label');
+
+        answerLabels.forEach((label) => {
+            label.classList.remove('correct', 'incorrect');
+        });
+    }
+
+    function checkAnswer() {
+        const currentQuestionElement = questions[currentQuestion];
+        const correctAnswer = currentQuestionElement.querySelector(`input[type="radio"][value="${correctAnswers[currentQuestion]}"]`);
+
+        if (selectedAnswer === correctAnswer) {
+            updateAnswerStatus(true);
+            score++;
+            scoreDisplay.textContent = score;
+        } else {
+            updateAnswerStatus(false);
+        }
     }
 
     function showQuestion(index) {
@@ -44,6 +66,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function startCountdown() {
+        interval = setInterval(function () {
+            countdown--;
+            timers[currentQuestion].querySelector('span').textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(interval);
+                currentQuestion++;
+                countdown = 30;
+                if (currentQuestion < questions.length) {
+                    showQuestion(currentQuestion);
+                }
+            }
+        }, 1000);
+    }
+
     restartButton.addEventListener('click', function () {
         clearInterval(interval);
         countdown = 30;
@@ -53,62 +91,26 @@ document.addEventListener("DOMContentLoaded", function () {
         showQuestion(currentQuestion);
     });
 
-    questions.forEach((question) => {
-        const radioButtons = question.querySelectorAll('input[type="radio"]');
-        radioButtons.forEach((radio) => {
-            radio.addEventListener('change', function () {
-                nextQuestionButton.style.display = 'block';
-                clearInterval(interval);
-            });
+    nextQuestionButton.addEventListener('click', function () {
+        if (currentQuestion < questions.length - 1) {
+            checkAnswer();
+            clearAnswerStatus();
+            currentQuestion++;
+            showQuestion(currentQuestion);
+        } else {
+            checkAnswer();
+            nextQuestionButton.style.display = 'none';
+        }
+    });
+
+    const answerButtons = document.querySelectorAll('input[type="radio"]');
+
+    answerButtons.forEach((button) => {
+        button.addEventListener('change', function () {
+            selectedAnswer = button;
         });
     });
 
-    nextQuestionButton.addEventListener('click', function () {
-        if (currentQuestion < questions.length - 1) {
-            currentQuestion++;
-            showQuestion(currentQuestion);
-        }
-    });
-
-    function updateScore(correct) {
-        if (correct) {
-            score++; // Increment the score if the answer is correct
-            scoreDisplay.textContent = score; // Update the displayed score
-        }
-    }
-
+    const correctAnswers = ["new-delhi", "blue-whale", "11", "cherryblossom", "incan"];
     showQuestion(currentQuestion);
-
-const answerButtons = document.querySelectorAll('input[type="radio"]');
-
-answerButtons.forEach((button) => {
-    button.addEventListener('click', function () {
-        if (currentQuestion === 0) {
-            if (button.value === 'new-delhi') {
-                updateScore(true);
-            }
-        } else if (currentQuestion === 1) {
-            if (button.value === 'blue-whale') {
-                updateScore(true);
-            }
-        } else if (currentQuestion === 2) {
-            if (button.value === '11') {
-                updateScore(true);
-            }
-        }
-        else if (currentQuestion === 3) {
-            if (button.value === 'cherryblossom') {
-                updateScore(true);
-            }
-        }
-        else if (currentQuestion === 4) {
-            if (button.value === 'incan') {
-                updateScore(true);
-            }
-        }
-
-        nextQuestionButton.style.display = 'block';
-        clearInterval(interval);
-    });
-});
 });
