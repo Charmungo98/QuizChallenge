@@ -159,3 +159,28 @@ h2 {
     font-size: 18px;
     text-align: center;
 }
+
+#feedback-form {
+    background-color: #ffdcb4;
+    color: #264143;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#feedback-text {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+}
+
+#submit-feedback {
+    background-color: #264143;
+    color: #ffdcb4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}

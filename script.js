@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextQuestionButton = document.getElementById('next-question');
     const scoreDisplay = document.getElementById('score-value');
     const timers = document.querySelectorAll('.timer');
-    const scoreTick = document.getElementById('score-tick'); 
-    const scoreCross = document.getElementById('score-cross')
+    const scoreTick = document.getElementById('score-tick');
+    const scoreCross = document.getElementById('score-cross');
 
     let currentQuestion = 0;
     let countdown = 30;
     let interval;
     let score = 0;
     let selectedAnswer = null;
-    let timerStarted = false; 
+    let timerStarted = false;
 
     startQuizButton.addEventListener('click', function () {
         const username = usernameInput.value.trim();
@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
             quizSection.style.display = 'block';
             header.innerHTML = `Welcome, ${username}!`;
 
-            if (!timerStarted) { 
+            if (!timerStarted) {
                 timerStarted = true;
                 startCountdown();
             }
 
             showQuestion(currentQuestion);
         } else {
-            return "username invalid"
+            return "username invalid";
         }
     });
 
@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
             updateAnswerStatus(true);
             score++;
             scoreDisplay.textContent = score;
-            scoreCross.innerHTML = ''
+            scoreCross.innerHTML = '';
             // Display a tick when the answer is correct
             scoreTick.innerHTML = '✔';
 
-        } else if (selectedAnswerElement && selectedAnswerElement.value != correctAnswer){
+        } else if (selectedAnswerElement && selectedAnswerElement.value != correctAnswer) {
             updateAnswerStatus(false);
             scoreTick.innerHTML = ''; // Clear the tick when the answer is incorrect
 
@@ -83,10 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         else {
-            
+
         }
     }
-    
+
     function showQuestion(index) {
         questions.forEach((question, i) => {
             if (i === index) {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestion++;
         if (currentQuestion < questions.length) {
             showQuestion(currentQuestion);
-            startCountdown(); 
+            startCountdown();
         } else {
             const congratulationsBanner = document.getElementById('congratulations-banner');
             congratulationsBanner.style.display = 'block';
@@ -159,4 +159,17 @@ document.addEventListener("DOMContentLoaded", function () {
         showQuestion(currentQuestion);
         startCountdown(); // Start the timer for the first question
     });
+    
+    const feedbackForm = document.getElementById("feedback-form");
+    feedbackForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from actually submitting
+        const feedbackText = document.getElementById("feedback-text").value;
+
+        // Log the feedback to the console
+        console.log("Feedback submitted:", feedbackText);
+
+        // Clear the feedback textarea
+        document.getElementById("feedback-text").value = "";
+    });
 });
+
