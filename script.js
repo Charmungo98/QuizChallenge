@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showQuestion(currentQuestion);
     });
 
-    questions.forEach((question, i) => {
+    questions.forEach((question) => {
         const radioButtons = question.querySelectorAll('input[type="radio"]');
         radioButtons.forEach((radio) => {
             radio.addEventListener('change', function () {

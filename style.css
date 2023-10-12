@@ -12,6 +12,25 @@ body {
     border-radius: 10px;
 }
 
+.beer-logo-image {
+    width: 50px;
+    height: 50px;
+}
+
+.toast.left {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toast.right {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 #questions-box {
     background-color: #264143;
     color: #ffffff;
@@ -19,6 +38,11 @@ body {
     padding: 30px;
     border-radius: 10px;
     font-size: 22px;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
 }
 
 h2 {
