@@ -139,3 +139,11 @@ h2 {
 #score {
     margin-left: 10px;
 }
+
+#score-tick {
+    color: green;
+}
+
+#score-cross {
+    color: red;
+}

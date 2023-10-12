@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const restartButton = document.getElementById('restart');
     const nextQuestionButton = document.getElementById('next-question');
     const scoreDisplay = document.getElementById('score-value');
-    const timers = document.querySelectorAll('.timer'); // Move this line inside the event listener
+    const timers = document.querySelectorAll('.timer');
+    const scoreTick = document.getElementById('score-tick'); 
+    const scoreCross = document.getElementById('score-cross')
 
     let currentQuestion = 0;
     let countdown = 30;
     let interval;
     let score = 0;
     let selectedAnswer = null;
-    let timerStarted = false; // Add this variable
+    let timerStarted = false; 
 
     startQuizButton.addEventListener('click', function () {
         const username = usernameInput.value.trim();
@@ -26,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
             quizSection.style.display = 'block';
             header.innerHTML = `Welcome, ${username}!`;
 
-            if (!timerStarted) { // Start the timer only if it hasn't been started before
+            if (!timerStarted) { 
                 timerStarted = true;
                 startCountdown();
             }
 
             showQuestion(currentQuestion);
         } else {
-            // Handle an empty username
+            return "username invalid"
         }
     });
 
@@ -68,16 +70,27 @@ document.addEventListener("DOMContentLoaded", function () {
             updateAnswerStatus(true);
             score++;
             scoreDisplay.textContent = score;
-        } else {
+            scoreCross.innerHTML = ''
+            // Display a tick when the answer is correct
+            scoreTick.innerHTML = '✔';
+
+        } else if (selectedAnswerElement && selectedAnswerElement.value != correctAnswer){
             updateAnswerStatus(false);
+            scoreTick.innerHTML = ''; // Clear the tick when the answer is incorrect
+
+            // Display an 'X' when the answer is incorrect
+            scoreCross.innerHTML = '✘';
+        }
+
+        else {
+            
         }
     }
-
+    
     function showQuestion(index) {
         questions.forEach((question, i) => {
             if (i === index) {
                 question.style.display = 'block';
-                // Ensure that the countdown is displayed correctly
                 const timerElements = document.querySelectorAll('.timer');
                 if (timerElements[currentQuestion]) {
                     timerElements[currentQuestion].textContent = `${countdown} seconds remaining`;
@@ -86,12 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 question.style.display = 'none';
             }
         });
-        countdown = 30; // Reset the countdown for the current question
+        countdown = 30;
     }
 
 
     function startCountdown() {
-        clearInterval(interval); // Clear any existing intervals
+        clearInterval(interval);
 
         interval = setInterval(function () {
             const timerElement = timers[currentQuestion];
@@ -104,12 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(interval);
                 currentQuestion++;
                 if (currentQuestion < questions.length) {
- // Reset the countdown for the next question
                     showQuestion(currentQuestion);
                 } else {
-                    // Handle the end of the quiz, e.g., show the final score
-                    quizSection.style.display = 'none';
-                    // You can add a "Quiz Over" message or any other desired behavior here
+                    quizSection.style.display = 'The Quiz is over, thnak you for playing!';
                 }
             }
         }, 1000);
