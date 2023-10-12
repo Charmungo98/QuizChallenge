@@ -11,96 +11,83 @@
 </head>
 
 <body>
-    <div id="banner">
-        <h1>
-            <span class="beer-logo">
-                <img src="assets/toast.png" alt="Beer Logo" class="beer-logo-image" />
-            </span>
-            PUB QUIZ CHALLENGE
-            <span class="beer-logo">
-                <img src="assets/toast.png" alt="Beer Logo" class="beer-logo-image" />
-            </span>
-        </h1>
-    </div>
-
-    <div id="questions-box">
-        <div class="question">
-            <h2>Question 1:</h2>
-            <div id="border">
-            <p>What is the capital of India?</p>
-            <input type="radio" name="q1" value="mumbai" /> Mumbai<br />
-            <input type="radio" name="q1" value="london" /> London<br />
-            <input type="radio" name="q1" value="new-delhi" /> New Delhi<br />
-            <br />
-            </div>
-            <div class="timer">
-                <span>30</span> seconds remaining
-            </div>
-        </div>
-        <div class="question">
-            <h2>Question 2:</h2>
-            <div id="border">
-            <p>Which animal has the heaviest tongue?</p>
-            <input type="radio" name="q2" value="rex" /> Tyrannosaurus Rex<br />
-            <input type="radio" name="q2" value="elephant" /> African Elephant<br />
-            <input type="radio" name="q2" value="blue-whale" /> Blue Whale<br />
-            <br />
-            </div>
-            <div class="timer">
-                <span>30</span> seconds remaining
-            </div>
-        </div>
-
-        <div class="question">
-            <h2>Question 3:</h2>
-            <div id="border">
-            <p>How many time zones are there in Russia?</p>
-            <input type="radio" name="q3" value="11" /> 11<br />
-            <input type="radio" name="q3" value="13" /> 13<br />
-            <input type="radio" name="q3" value="9" />9<br />
-            <br />
-            </div>
-            <div class="timer">
-                <span>30</span> seconds remaining
-            </div>
-        </div>
-
-        <div class="question">
-            <h2>Question 4:</h2>
-            <div id="border">
-            <p>What is the national flower of Japan?</p>
-            <input type="radio" name="q4" value="rose" /> Red Rose <br />
-            <input type="radio" name="q4" value="daffodil" /> Daffodil <br />
-            <input type="radio" name="q4" value="cherryblossom" /> Cherry Blossom <br />
-            <br/>
-            </div>
-            <div class="timer">
-                <span>30</span> seconds remaining
-            </div>
-        </div>
-
-        <div class="question">
-            <h2>Question 5:</h2>
-            <div id="border">
-            <p>Which of the following empires had no written language?</p>
-            <input type="radio" name="q5" value="incan" /> Incan <br />
-            <input type="radio" name="q5" value="roman" /> Roman <br />
-            <input type="radio" name="q5" value="aztec" /> Aztec <br />
-            <br />
-            </div>
-            <div class="timer">
-                <span>30</span> seconds remaining
-            </div>
-        </div>
-        <div class="buttons-container">
-            <button id="restart">Restart Quiz</button>
-            <button id="next-question">Next Question</button>
-            <div id="score">
-                Score: <span id="score-value">0</span>
-            </div>
-
+    <div id="header">
+        <div id="banner">
+            <h1>
+                <span class="beer-logo">
+                    <img src="assets/toast.png" alt="Beer Logo" class="beer-logo-image" />
+                </span>
+                PUB QUIZ CHALLENGE
+                <span class="beer-logo">
+                    <img src="assets/toast.png" alt="Beer Logo" class="beer-logo-image" />
+                </span>
+            </h1>
         </div>
     </div>
+
+    <div id="username-section">
+        <input type="text" id="username" placeholder="Enter your username" />
+        <button id="start-quiz">Start Quiz</button>
+    </div>
+
+    <div id="quiz" style="display: none">
+        <div id="questions-box">
+            <div class="question">
+            
+                    <h2>Question 1:</h2>
+                    <div id="border">
+                        <p>What is the capital of India?</p>
+                        <input type="radio" name="q1" value="mumbai" /> Mumbai<br />
+                        <input type="radio" name="q1" value="london" /> London<br />
+                        <input type="radio" name="q1" value="new-delhi" /> New Delhi<br />
+                    </div>
+                
+                <div class="timer">30 seconds remaining</div>
+                
+                    <h2>Question 2:</h2>
+                    <div id="border">
+                        <p>Which animal has the heaviest tongue?</p>
+                        <input type="radio" name="q2" value="rex" /> Tyrannosaurus Rex<br />
+                        <input type="radio" name="q2" value="elephant" /> African Elephant<br />
+                        <input type="radio" name="q2" value="blue-whale" /> Blue Whale<br />
+                    </div>
+                
+                <div class="timer">30 seconds remaining</div>
+                
+                    <h2>Question 3:</h2>
+                    <div id="border">
+                        <p>How many time zones are there in Russia?</p>
+                        <input type="radio" name="q3" value="11" /> 11<br />
+                        <input type="radio" name="q3" value="13" /> 13<br />
+                        <input type="radio" name="q3" value="9" /> 9<br />
+                    </div>
+                
+                <div class="timer">30 seconds remaining</div>
+                
+                    <h2>Question 4:</h2>
+                    <div id="border">
+                        <p>What is the national flower of Japan?</p>
+                        <input type="radio" name="q4" value="rose" /> Red Rose <br />
+                        <input type="radio" name="q4" value="daffodil" /> Daffodil<br />
+                        <input type="radio" name="q4" value="cherryblossom" /> Cherry Blossom <br />
+                    </div>
+                
+                <div class="timer">30 seconds remaining</div>
+                
+                    <h2>Question 5:</h2>
+                    <div id="border">
+                        <p>Which of the following empires had no written language?</p>
+                        <input type="radio" name="q5" value="incan" /> Incan <br />
+                        <input type="radio" name="q5" value="roman" /> Roman <br />
+                        <input type="radio" name="q5" value="aztec" /> Aztec <br />
+                    </div>
+                <div class="timer">30 seconds remaining</div>
+                <div class="buttons-container">
+                    <button id="restart">Restart Quiz</button>
+                    <button id="next-question">Next Question</button>
+                    <div id="score">Score: <span id="score-value">0</span></div>
+                </div>
+            </div>
+        </div>
 </body>
-
 </html>
