@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (currentQuestion < questions.length) {
                     showQuestion(currentQuestion);
                 } else {
-                    quizSection.style.display = 'The Quiz is over, thnak you for playing!';
+                    quizSection.style.display = 'block';
                 }
             }
         }, 1000);
@@ -143,11 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestion++;
         if (currentQuestion < questions.length) {
             showQuestion(currentQuestion);
-            startCountdown(); // Start the timer for the next question
+            startCountdown(); 
         } else {
-            // Handle the end of the quiz, e.g., show the final score
-            quizSection.style.display = 'none';
-            // You can add a "Quiz Over" message or any other desired behavior here
+            const congratulationsBanner = document.getElementById('congratulations-banner');
+            congratulationsBanner.style.display = 'block';
         }
     }
 
