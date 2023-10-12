@@ -69,21 +69,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedAnswerElement && selectedAnswerElement.value === correctAnswer) {
             updateAnswerStatus(true);
             score++;
-            scoreDisplay.textContent = score;
+            scoreDisplay.textContent = `${score}/5`;;
             scoreCross.innerHTML = '';
-            // Display a tick when the answer is correct
             scoreTick.innerHTML = '✔';
-
         } else if (selectedAnswerElement && selectedAnswerElement.value != correctAnswer) {
             updateAnswerStatus(false);
-            scoreTick.innerHTML = ''; // Clear the tick when the answer is incorrect
-
-            // Display an 'X' when the answer is incorrect
+            scoreTick.innerHTML = '';
             scoreCross.innerHTML = '✘';
         }
-
         else {
-
         }
     }
 
