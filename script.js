@@ -91,6 +91,20 @@ answerButtons.forEach((button) => {
             if (button.value === 'blue-whale') {
                 updateScore(true);
             }
+        } else if (currentQuestion === 2) {
+            if (button.value === '11') {
+                updateScore(true);
+            }
+        }
+        else if (currentQuestion === 3) {
+            if (button.value === 'cherryblossom') {
+                updateScore(true);
+            }
+        }
+        else if (currentQuestion === 4) {
+            if (button.value === 'incan') {
+                updateScore(true);
+            }
         }
 
         nextQuestionButton.style.display = 'block';

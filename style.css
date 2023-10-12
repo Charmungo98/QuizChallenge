@@ -19,6 +19,7 @@ body {
     margin: 25px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 22px;
 }
 
 h2 {
@@ -61,6 +62,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    font-size: 18px;
 }
 
 #next-question,
