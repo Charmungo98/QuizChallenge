@@ -234,21 +234,11 @@ The main font being used in the site is Arial, sans-serif. Roboto is being used 
 
 - I used Lighthouse in Chrome Developer Tools to confirm that the dynamics of the color scheme and font choice within the article do not contrast each other negatively.
 
-- Home Page
-
-![ligthouse-home-page](assets/readme-images/lighthouse-home.png)
-
-- Ivar Page
-
-![ligthouse-ivar-page](assets/readme-images/lighthouse-ivar.png)
-
-- Contact Page
-
-![ligthouse-contact-page](assets/readme-images/lighthouse-contact.png)
+![ligthouse](assets/lighthouse.png)
 
 # 5. Finished Product
 
-![Pub Quiz Challenge](assets/readme-images/pubquiz.png)
+![Pub Quiz Challenge](assets/pubquiz.png)
 
 # 6. Deployment
 
