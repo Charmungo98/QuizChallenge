@@ -208,7 +208,7 @@ The main font being used in the site is Arial, sans-serif. Roboto is being used 
 
   - All Pages
 
-    - **Username formr**
+    - **Username form**
 
       - Filling in the username form and clicking start quiz will og the users name to the console and start the quiz.
 
@@ -264,7 +264,7 @@ This website was developed using [Codeanywhere](https://app.codeanywhere.com/), 
   - Instagram logo: Iconfinder
   - Twitter Logo: Iconfinder
   - Mail logo: Feather Icons
-  - Favicon logo: <https://icons8.com/icons/set/viking>
+  - Favicon: Iconfinder
 
 ### Code
 
