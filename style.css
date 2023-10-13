@@ -87,6 +87,7 @@ h1 {
     padding: 30px;
     border-radius: 10px;
     font-size: 22px;
+    height: 100%;
 }
 
 .question {
