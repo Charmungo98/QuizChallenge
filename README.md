@@ -208,27 +208,19 @@ The main font being used in the site is Arial, sans-serif. Roboto is being used 
 
   - All Pages
 
-    - **Navigation Bar**
+    - **Username formr**
 
-      - Hovering on the different navigation bar's links will trigger the hover effect, highlighting the link for the customer.
+      - Filling in the username form and clicking start quiz will og the users name to the console and start the quiz.
 
-      - Clicking on the navigation bar's links will bring the viewer to the specified page.
+    - **Answering questions**
 
-    - **Footer**
-
-      - Clicking on the social media links will open the specific website on a new tab.
-
-  - Contact Page
-
-    - Hovering on the submit button within the feedback form section will trigger the hover effect, highlighting the button for the viewer.
+      - Clicking on the multiple choice answers then clicking the next question button will result in a plus 1 score and a tick or no additional points and an 'x' depending on the answer the user selected.
 
   - Feedback Form section
 
     - When filling out the feedback form, the viewer is required to complete all fields before submitting.
 
-    - Clicking on the link to the Wikipedia page will direct the viewer to the relevant Wikipedia page.
-
-    - The Wikipedia page in the imedia viewfinder is functional and the viewer can scroll through the relevant Wikipedia page directly from the website.
+    - Filling out the feedback form and clicking the summit button will log the feedback to the console.
 
 ### Accessability
 
