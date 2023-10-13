@@ -5,7 +5,25 @@ body {
     padding: 0;
 }
 
+#social-icons-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 #header {
+    background-color: #ffdcb4;
+    color: #264143;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#banner {
     background-color: #ffdcb4;
     color: #264143;
     padding: 20px;
@@ -21,12 +39,6 @@ h1 {
     width: 600px;
     padding: 30px;
     border-radius: 10px;
-}
-
-#social-icons {
-    float: right;
-    margin-right: 30px;
-    margin-top: 50px;
 }
 
 .social-icon {
@@ -81,13 +93,6 @@ h1 {
     padding: 40px;
 }
 
-#banner {
-    background-color: #ffdcb4;
-    color: #264143;
-    padding: 20px;
-    border-radius: 10px;
-}
-
 .beer-logo-image {
     width: 50px;
     height: 50px;
@@ -112,7 +117,7 @@ h2 {
     margin-top: 0;
 }
 
-#border {
+.border {
     border: 2px solid #e99f4c;
 }
 
@@ -174,7 +179,7 @@ h2 {
     text-align: center;
 }
 
-#feedback-form {
+.feedback-form {
     background-color: #ffdcb4;
     color: #264143;
     padding: 20px;
@@ -197,4 +202,97 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+}
+
+@media (max-width: 800px) {
+    #header {
+        width: auto;
+        max-width: 100%;
+    }
+
+    #banner {
+        width: auto;
+        max-width: 100%;
+    }
+
+    h1 {
+        width: auto;
+        max-width: 100%;
+        font-size: 22px;
+    }
+
+    .beer-logo-image {
+        width: 35px;
+        height: 35px;
+    }
+
+    #social-icons-container {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .social-icon {
+        height: 35px;
+        width: 35px;
+    }
+
+    .social-icon-facebook {
+        height: 39px;
+        width: 39px;
+    }
+
+    #questions-box {
+        width: auto;
+        max-width: 100%;
+    }
+
+    #restart,
+    #next-question,
+    #score {
+
+        width: 75px;
+    }
+
+    #username-section {
+        max-width: 100%;
+        width: auto;
+    }
+
+    #congratulations-banner {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    #border {
+        font-size: 15px;
+    }
+
+    .timer {
+        font-size: 17px;
+    }
+
+    #restart {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    #next-question {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #score {
+        font-size: 15px;
+        text-align: center;
+    }
 }

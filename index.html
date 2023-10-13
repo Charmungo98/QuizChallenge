@@ -8,9 +8,17 @@
     <script src="script.js"></script>
     <title>Pub Quiz Challenge</title>
   </head>
+
   <body>
     <div id="header">
-        <div id="social-icons">
+        <div id="banner">
+            <h1>
+                <img src="assets/toast.png" alt="Beer Logo" class="beer-logo-image" />
+                PUB QUIZ CHALLENGE
+                <img src="assets/toast.png" alt="Beer Logo" class="beer-logo-image" />
+            </h1>
+        </div>
+        <div id="social-icons-container">
             <a href="https://www.facebook.com" target="_blank">
                 <img src="assets/facebook.png" alt="Facebook" class="social-icon-facebook" />
             </a>
@@ -24,26 +32,9 @@
                 <img src="assets/gmail.png" alt="Gmail" class="social-icon" />
             </a>
         </div>
-      <div id="banner">
-        <h1>
-          <span class="beer-logo">
-            <img
-              src="assets/toast.png"
-              alt="Beer Logo"
-              class="beer-logo-image"
-            />
-          </span>
-          PUB QUIZ CHALLENGE
-          <span class="beer-logo">
-            <img
-              src="assets/toast.png"
-              alt="Beer Logo"
-              class="beer-logo-image"
-            />
-          </span>
-        </h1>
-      </div>
     </div>
+
+
     <div id="username-section">
       <input type="text" id="username" placeholder="Enter your username" />
       <button id="start-quiz">Start Quiz</button>
@@ -51,7 +42,7 @@
     <div id="questions-box">
       <div class="question">
         <h2>Question 1:</h2>
-        <div id="border">
+        <div class="border">
           <p>What is the capital of India?</p>
           <input type="radio" name="q1" value="mumbai" /> Mumbai<br />
           <input type="radio" name="q1" value="london" /> London<br />
@@ -61,7 +52,7 @@
       </div>
       <div class="question hide">
         <h2>Question 2:</h2>
-        <div id="border">
+        <div class="border">
           <p>Which animal has the heaviest tongue?</p>
           <input type="radio" name="q2" value="rex" /> Tyrannosaurus Rex<br />
           <input type="radio" name="q2" value="elephant" /> African Elephant<br />
@@ -71,7 +62,7 @@
       </div>
       <div class="question hide">
         <h2>Question 3:</h2>
-        <div id="border">
+        <div class="border">
           <p>How many time zones are there in Russia?</p>
           <input type="radio" name="q3" value="11" /> 11<br />
           <input type="radio" name="q3" value="13" /> 13<br />
@@ -81,7 +72,7 @@
       </div>
       <div class="question hide">
         <h2>Question 4:</h2>
-        <div id="border">
+        <div class="border">
           <p>What is the national flower of Japan?</p>
           <input type="radio" name="q4" value="rose" /> Red Rose <br />
           <input type="radio" name="q4" value="daffodil" /> Daffodil<br />
@@ -92,7 +83,7 @@
       </div>
       <div class="question hide">
         <h2>Question 5:</h2>
-        <div id="border">
+        <div class="border">
           <p>Which of the following empires had no written language?</p>
           <input type="radio" name="q5" value="incan" /> Incan <br />
           <input type="radio" name="q5" value="roman" /> Roman <br />
@@ -111,19 +102,25 @@
     </div>
 
     <div id="congratulations-banner" class="hide">
-        <div id="congratulations-message">
-            Congratulations on completing the quiz! Press the restart button to restart the quiz or if you'd like to give us
-            some feedback, please leave a comment in the feedback form below.
-        </div>
-        <div id="feedback-form">
-            <h2>Feedback Form</h2>
-            <p>We value your feedback. Please share your comments with us:</p>
-            <form action="#" method="post" id="feedback-form">
-                <textarea id="feedback-text" name="feedback" rows="4" cols="50" placeholder="Your feedback..."></textarea>
-                <button id="submit-feedback" type="submit">Submit Feedback</button>
-            </form>
-        </div>
+      <div id="congratulations-message">
+        Congratulations on completing the quiz! Press the restart button to
+        restart the quiz or if you'd like to give us some feedback, please leave
+        a comment in the feedback form below.
+      </div>
+      <div class="feedback-form">
+        <h2>Feedback Form</h2>
+        <p>We value your feedback. Please share your comments with us:</p>
+        <form action="#" method="post" class="feedback-form">
+          <textarea
+            id="feedback-text"
+            name="feedback"
+            rows="4"
+            cols="50"
+            placeholder="Your feedback..."
+          ></textarea>
+          <button id="submit-feedback" type="submit">Submit Feedback</button>
+        </form>
+      </div>
     </div>
-
   </body>
 </html>
