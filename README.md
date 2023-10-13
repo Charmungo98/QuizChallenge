@@ -46,8 +46,6 @@ Visit the deployed website [here](https://charmungo98.github.io/QuizChallenge/).
 
 - We also value the opportunity to provide feedback to the website's authors.
 
-- Furthermore, we seek easily accessible external links to additional information sources that can expand our knowledge on the subject, such as Wikipedia.
-
 ### Color Scheme
 
 The colors used in the site are two different tones of orange (#e99f4c and #e4f6f8) and one tone of teal (#264143). These 3 colours were used throughout the website constrasting withint the header and main body of the website, additionally being used for the borders too.

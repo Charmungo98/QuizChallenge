@@ -141,28 +141,21 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             const congratulationsBanner = document.getElementById('congratulations-banner');
             congratulationsBanner.style.display = 'block';
+            document.getElementById('questions-box').style.height = '300px';
         }
     }
 
     restartButton.addEventListener('click', function () {
-        clearInterval(interval);
-        countdown = 30;
-        currentQuestion = 0;
-        score = 0;
-        scoreDisplay.textContent = score;
-        showQuestion(currentQuestion);
-        startCountdown(); // Start the timer for the first question
+        window.location.reload();
     });
-    
+
     const feedbackForm = document.getElementById("feedback-form");
     feedbackForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from actually submitting
+        event.preventDefault();
         const feedbackText = document.getElementById("feedback-text").value;
 
-        // Log the feedback to the console
         console.log("Feedback submitted:", feedbackText);
 
-        // Clear the feedback textarea
         document.getElementById("feedback-text").value = "";
     });
 });
